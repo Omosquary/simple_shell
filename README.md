@@ -1,10 +1,10 @@
-#Simple Shell
+# Simple Shell
 Simple Shell is a project for students at Alx School. The project test everything we have learned about the C programming language and our skills for work as a team and planning for a long term project.
 
-##Description
+## Description
 The Simple Shell is a simple UNIX command interpreter written in C. The program runs based on bash commands obtained from the input stream by the user, the respective command typed by the user in executed as if in a UNIX shell.
 
-##Requirements
+## Requirements
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 20.04 LTS
 Your C programs and functions will be compiled with gcc using the Options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -15,14 +15,14 @@ Your shell should not have any memory leaks
 No more than 5 functions per file
 All your header files should be include guarded
 Use system calls only when you need to (why?)
-##Compilation
+## Compilation
 All of the .c files along with a main.c file are to be compiled with gcc 4.8.4 on Ubuntu 14.04 LTS with the flags -Wall Werror -Wextra and -pedantic. The files will be compiled this way:
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 Execute
 $ ./hsh
 
-##List of allowed functions and system calls
+## List of allowed functions and system calls
 access (man 2 access)
 chdir (man 2 chdir)
 close (man 2 close)
@@ -55,7 +55,7 @@ wait3 (man 2 wait3)
 wait4 (man 2 wait4)
 write (man 2 write)
 
-##Testing
+## Testing
 Your shell should work like this in interactive mode:
 
 $ ./hsh
