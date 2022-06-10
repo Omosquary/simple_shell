@@ -24,11 +24,15 @@ struct builtin
 {
 	char *env;
 	char *exit;
+	char *cd;
 } builtin;
 
 /*Prototypes Used*/
 
 int _putchar(char c);
+int main(int argc, char **argv, char *envp[]);
+int handle_builtin(char **command, char *line);
+
 
 
 #endif/*End SHELL_H*/
