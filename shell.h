@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef SHELL_H
+#define SHELL_H
 
 /**
  * this is the header file that stores the prototype used 
@@ -31,4 +31,4 @@ struct builtin
 int _putchar(char c);
 
 
-#endif/*End MAIN_H*/
+#endif/*End SHELL_H*/
