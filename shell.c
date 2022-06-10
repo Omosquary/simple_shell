@@ -8,9 +8,9 @@
  * Return: Always 0.
  */
 
-int main(int argc, char **argv, char *envp[])
+int main(int argc, char **argv, char *envp)
 {
-	char *line = NULL, *pathcom = NULL, *path = NULL;
+	char *line = NULL, *pathcommand = NULL, *path = NULL;
 	ssize_t linesize = 0;
 	size_t bufsize = 0;
 	int status =  1;

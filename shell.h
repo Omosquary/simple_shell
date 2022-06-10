@@ -51,7 +51,7 @@ struct info
 /*Prototypes Used*/
 
 int _putchar(char c);
-int main(int argc, char **argv, char *envp[]);
+int main(int argc, char **argv, char *envp);
 int handle_builtin(char **command, char *line);
 
 /* Handles Builtin Parameters*/
@@ -60,6 +60,8 @@ void exit_cmd(char **command, char *line);
 int checker(char **cmd, char *buf);
 char *append_path(char *path, char *command);
 void handle_signal(int m);
+char *test_path(char **path, char *command);
+int handle_builtin(char **command, char *line);
 
 
 /* string handlers */
