@@ -1,12 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-/**
- * this is the header file that stores the prototype used 
- * stores the builtin struct
- * stores the environment variables
-*/
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +12,12 @@
 #include <time.h>
 #include <stdbool.h>
 
-/* struct for builtin function*/
+/**
+ * struct builtin - is a structure for a builtin object
+ * @env: is the environment element
+ * @exit: is the exit element
+ * @cd: is the change directory element
+ */
 
 struct builtin
 {
@@ -27,13 +26,22 @@ struct builtin
 	char *cd;
 } builtin;
 
-/* struct for flags*/
+/**
+ * struct flags - is a structure for a flag object
+ * @interactive: is the interactive element
+ */
+
 struct flags
 {
 	bool interactive;
 } flags;
 
-/* struct for information*/
+/**
+ * struct info - is a structure for information object
+ * @final_exit: is the final exit element
+ * @ln_count: is the line count element
+ */
+
 struct info
 {
 	int final_exit;
@@ -51,6 +59,8 @@ void print_env(void);
 void exit_cmd(char **command, char *line);
 int checker(char **cmd, char *buf);
 char *append_path(char *path, char *command);
+void handle_signal(int m);
+
 
 /* string handlers */
 int _strcmp(char *s1, char *s2);
@@ -58,15 +68,17 @@ int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int n);
 char *_strdup(char *s);
 char *_strchr(char *s, char c);
-
 void execution(char *cp, char **cmd);
 char *find_path(void);
+void prompt_user(void);
+
 
 /* environment variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-
+/* helper function for efficient free */
+void free_buffers(char **buf);
 
 
 #endif/*End SHELL_H*/
