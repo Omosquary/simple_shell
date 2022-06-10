@@ -27,11 +27,35 @@ struct builtin
 	char *cd;
 } builtin;
 
+/* struct for flags*/
+struct flags
+{
+	bool interactive;
+} flags;
+
+/* struct for information*/
+struct info
+{
+	int final_exit;
+	int ln_count;
+} info;
+
 /*Prototypes Used*/
 
 int _putchar(char c);
 int main(int argc, char **argv, char *envp[]);
 int handle_builtin(char **command, char *line);
+
+/* Handles Builtin Parameters*/
+void print_env(void);
+void exit_cmd(char **command, char *line);
+int change_dir(char **dir, char *err)
+
+
+/* environment variables */
+extern char **environ;
+extern __sighandler_t signal(int __sig, __sighandler_t __handler);
+
 
 
 
