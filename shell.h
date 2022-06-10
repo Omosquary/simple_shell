@@ -62,6 +62,7 @@ char *append_path(char *path, char *command);
 void handle_signal(int m);
 char *test_path(char **path, char *command);
 int handle_builtin(char **command, char *line);
+char **tokenizer(char *line);
 
 
 /* string handlers */
