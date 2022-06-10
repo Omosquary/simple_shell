@@ -49,8 +49,18 @@ int handle_builtin(char **command, char *line);
 /* Handles Builtin Parameters*/
 void print_env(void);
 void exit_cmd(char **command, char *line);
-/*int change_dir(char **cmd, __attribute__((unused))int er);*/
+int checker(char **cmd, char *buf);
 char *append_path(char *path, char *command);
+
+/* string handlers */
+int _strcmp(char *s1, char *s2);
+int _strlen(char *s);
+int _strncmp(char *s1, char *s2, int n);
+char *_strdup(char *s);
+char *_strchr(char *s, char c);
+
+void execution(char *cp, char **cmd);
+char *find_path(void);
 
 /* environment variables */
 extern char **environ;
