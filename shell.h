@@ -49,8 +49,8 @@ int handle_builtin(char **command, char *line);
 /* Handles Builtin Parameters*/
 void print_env(void);
 void exit_cmd(char **command, char *line);
-int change_dir(char **dir, char *err)
-
+/*int change_dir(char **cmd, __attribute__((unused))int er);*/
+char *append_path(char *path, char *command);
 
 /* environment variables */
 extern char **environ;
