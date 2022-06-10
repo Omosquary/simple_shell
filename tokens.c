@@ -29,7 +29,7 @@ char **tokenizer(char *line)
 		}
 		else if (_strchr(delim, *bufp) == NULL && flag == 1)
 		{
-			flag = o;
+			flag = 0;
 		}
 		bufp++;
 	}
