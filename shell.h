@@ -51,7 +51,7 @@ struct info
 /*Prototypes Used*/
 
 int _putchar(char c);
-int main(int argc, char **argv, char *envp);
+int main(int argc, char **argv, char *envp[]);
 int handle_builtin(char **command, char *line);
 
 /* Handles Builtin Parameters*/
