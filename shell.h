@@ -51,10 +51,9 @@ struct info
 /*Prototypes Used*/
 
 int _putchar(char c);
+int print_s(char *s);
 int main(int argc, char **argv, char *envp[]);
 int handle_builtin(char **command, char *line);
-
-/* Handles Builtin Parameters*/
 void print_env(void);
 void exit_cmd(char **command, char *line);
 int checker(char **cmd, char *buf);
@@ -63,9 +62,6 @@ void handle_signal(int m);
 char *test_path(char **path, char *command);
 int handle_builtin(char **command, char *line);
 char **tokenizer(char *line);
-
-
-/* string handlers */
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int n);
@@ -74,13 +70,8 @@ char *_strchr(char *s, char c);
 void execution(char *cp, char **cmd);
 char *find_path(void);
 void prompt_user(void);
-
-
-/* environment variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
-
-/* helper function for efficient free */
 void free_buffers(char **buf);
 
 
