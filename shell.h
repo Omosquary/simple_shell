@@ -74,6 +74,7 @@ extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 void free_buffers(char **buf);
 /*int exit_cmd(char **command, char *line);*/
+int print_number(int n);
 
 
 #endif/*End SHELL_H*/
