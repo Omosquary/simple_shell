@@ -11,12 +11,13 @@
 char **tokenizer(char *line)
 {
 	char *buf = NULL, *bufp = NULL, *token = NULL, *delim = " :\t\r\n";
-	char **tokens = NULL;
+	char **tokens;
 	int tokensize = 1;
 	size_t index = 0, flag = 0;
 
 	buf = _strdup(line);
-	if (!buf)
+	tokens = malloc(sizeof(char *) * (tokensize + 1));
+	if (buf == NULL)
 		return (NULL);
 	bufp = buf;
 
@@ -33,7 +34,7 @@ char **tokenizer(char *line)
 		}
 		bufp++;
 	}
-	tokens = malloc(sizeof(char *) * (tokensize + 1));
+	/* tokens = malloc(sizeof(char *) * (tokensize + 1));*/
 	token = strtok(buf, delim);
 	while (token)
 	{
