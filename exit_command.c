@@ -17,7 +17,7 @@ int exit_cmd(char **command, char *line)
 		status = atoi(command[1]);
 		exit(status);
 	}
-	/*free(line);
-	free_buffers(command);*/
+	/*free(line);*/
+	free_buffers(command);
 	exit(EXIT_SUCCESS);
 }
