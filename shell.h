@@ -55,7 +55,7 @@ int print_s(char *s);
 int main(int argc, char **argv, char *envp[]);
 int handle_builtin(char **command, char *line);
 void print_env(void);
-/*void exit_cmd(char **command, char *line);*/
+void exit_cmd(char **command, char *line);
 int checker(char **cmd, char *buf);
 char *append_path(char *path, char *command);
 void handle_signal(int m);
@@ -73,7 +73,7 @@ void prompt_user(void);
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 void free_buffers(char **buf);
-int exit_cmd(char **command, char *line);
+/*int exit_cmd(char **command, char *line);*/
 
 
 #endif/*End SHELL_H*/

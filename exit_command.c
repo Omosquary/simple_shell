@@ -7,17 +7,9 @@
 *
 * Return: no return
 */
-int exit_cmd(char **command, char *line)
+void exit_cmd(char **command, char *line)
 {
-	int status = 0;
-
-	(void)line;
-	if (command[1] != NULL)
-	{
-		status = atoi(command[1]);
-		exit(status);
-	}
-	/*free(line);*/
+	free(line);
 	free_buffers(command);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
