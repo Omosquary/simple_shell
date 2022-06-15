@@ -10,18 +10,16 @@
 */
 char *test_path(char **path, char *command)
 {
-	int x = 0;
-	char *display;
+	int i = 0;
+	char *output;
 
-	while (path[x])
+	while (path[i])
 	{
-		display = append_path(path[x], command);
-		if (access(display, F_OK | X_OK) == 0)
-		{
-			return (display);
-		}
-		free(display);
-		x++;
+		output = append_path(path[i], command);
+		if (access(output, F_OK | X_OK) == 0)
+			return (output);
+		free(output);
+		i++;
 	}
 	return (NULL);
 }

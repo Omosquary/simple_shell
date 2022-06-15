@@ -16,14 +16,12 @@
  * struct builtin - is a structure for a builtin object
  * @env: is the environment element
  * @exit: is the exit element
- * @cd: is the change directory element
  */
 
 struct builtin
 {
 	char *env;
 	char *exit;
-	char *cd;
 } builtin;
 
 /**
@@ -52,7 +50,7 @@ struct info
 
 int _putchar(char c);
 int print_s(char *s);
-int main(int argc, char **argv, char *envp[]);
+int main(int ac, char **av, char *envp[]);
 int handle_builtin(char **command, char *line);
 void print_env(void);
 void exit_cmd(char **command, char *line);
@@ -75,6 +73,7 @@ extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 void free_buffers(char **buf);
 /*int exit_cmd(char **command, char *line);*/
 int print_number(int n);
+/*int execution(char **commands, char *err);*/
 
 
 #endif/*End SHELL_H*/

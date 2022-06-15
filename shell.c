@@ -1,26 +1,24 @@
 #include "shell.h"
-
 /**
- * main - is a function that creates a simple UNIX command Interpreter
- * @argc: argument count
- * @argv: argument vector
- * @envp: environment vector
- * Return: Always 0.
- */
+* main - carries out the read, execute then print output loop
+* @ac: argument count
+* @av: argument vector
+* @envp: environment vector
+*
+* Return: 0
+*/
 
-int main(int argc, char **argv, char *envp[])
+int main(int ac, char **av, char *envp[])
 {
 	char *line = NULL, *pathcommand = NULL, *path = NULL;
-	ssize_t linesize = 0;
 	size_t bufsize = 0;
-	int status =  1;
+	ssize_t linesize = 0;
 	char **command = NULL, **paths = NULL;
-	(void)argv;
-	(void)envp;
-	if (argc < 1)
+	(void)envp, (void)av;
+	if (ac < 1)
 		return (-1);
 	signal(SIGINT, handle_signal);
-	while (status)
+	while (1)
 	{
 		free_buffers(command);
 		free_buffers(paths);
@@ -41,7 +39,7 @@ int main(int argc, char **argv, char *envp[])
 		paths = tokenizer(path);
 		pathcommand = test_path(paths, command[0]);
 		if (!pathcommand)
-			perror(argv[0]);
+			perror(av[0]);
 		else
 			execution(pathcommand, command);
 	}
@@ -50,4 +48,3 @@ int main(int argc, char **argv, char *envp[])
 	free(line);
 	return (0);
 }
-

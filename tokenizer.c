@@ -1,23 +1,20 @@
 #include "shell.h"
 
-
 /**
- * tokenizer - is a function that creates tokens from given input
- * @line: line to be tokenized
- *
- * Return: array of strings
- */
-
+* tokenizer - creates tokens from given input
+* @line: to be tokenized
+*
+* Return: array of strings
+*/
 char **tokenizer(char *line)
 {
 	char *buf = NULL, *bufp = NULL, *token = NULL, *delim = " :\t\r\n";
-	char **tokens;
+	char **tokens = NULL;
 	int tokensize = 1;
 	size_t index = 0, flag = 0;
 
 	buf = _strdup(line);
-	tokens = malloc(sizeof(char *) * (tokensize + 1));
-	if (buf == NULL)
+	if (!buf)
 		return (NULL);
 	bufp = buf;
 
@@ -29,12 +26,10 @@ char **tokenizer(char *line)
 			flag = 1;
 		}
 		else if (_strchr(delim, *bufp) == NULL && flag == 1)
-		{
 			flag = 0;
-		}
 		bufp++;
 	}
-	/* tokens = malloc(sizeof(char *) * (tokensize + 1));*/
+	tokens = malloc(sizeof(char *) * (tokensize + 1));
 	token = strtok(buf, delim);
 	while (token)
 	{

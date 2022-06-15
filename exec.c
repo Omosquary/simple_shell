@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * execution - is a function that executes commands entered by usrs
- * @cp: command
- * @cmd: array of pointers to commands
- * Return: Always 0
+ * execution - executes commands entered by users
+ *@cp: command
+ *@cmd:vector array of pointers to commands
+ * Return: 0
  */
-
 void execution(char *cp, char **cmd)
 {
 	pid_t child_pid;
@@ -15,10 +14,8 @@ void execution(char *cp, char **cmd)
 
 	child_pid = fork();
 	if (child_pid < 0)
-	{
 		perror(cp);
-	}
-	else if (child_pid == 0)
+	if (child_pid == 0)
 	{
 		execve(cp, cmd, env);
 		perror(cp);
@@ -27,7 +24,5 @@ void execution(char *cp, char **cmd)
 		exit(98);
 	}
 	else
-	{
 		wait(&status);
-	}
 }
