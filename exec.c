@@ -14,10 +14,8 @@ void execution(char *cp, char **cmd)
 
 	child_pid = fork();
 	if (child_pid < 0)
-	{
 		perror(cp);
-	}
-	else if (child_pid == 0)
+	if (child_pid == 0)
 	{
 		execve(cp, cmd, env);
 		perror(cp);

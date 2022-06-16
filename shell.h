@@ -46,29 +46,30 @@ struct info
 	int ln_count;
 } info;
 
-/*Prototypes Used*/
 
 int _putchar(char c);
-int checker(char **cmd, char *buf);
-void prompt_user(void);
-void handle_signal(int m);
-char **tokenizer(char *line);
-char *test_path(char **path, char *command);
-char *append_path(char *path, char *command);
+int print_s(char *s);
+int main(int ac, char **av, char *envp[]);
 int handle_builtin(char **command, char *line);
-void exit_cmd(char **command, char *line);
 void print_env(void);
+void exit_cmd(char **command, char *line);
+int checker(char **cmd, char *buf);
+char *append_path(char *path, char *command);
+void handle_signal(int m);
+char *test_path(char **path, char *command);
+int handle_builtin(char **command, char *line);
+char **tokenizer(char *line);
 int _strcmp(char *s1, char *s2);
 int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int n);
 char *_strdup(char *s);
 char *_strchr(char *s, char c);
-
 void execution(char *cp, char **cmd);
 char *find_path(void);
-void free_buffers(char **buf);
+void prompt_user(void);
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
+void free_buffers(char **buf);
 
 
-#endif/*End SHELL_H*/
+#endif
